@@ -99,8 +99,10 @@ Route::middleware(['auth', 'AlumniMiddleware'])->group(function () {
 
     Route::get('alumni/tracerkerja', [TracerKerjaController::class, 'alumnitracerkerja']);
     Route::post('alumni/tracerkerja/store', [TracerKerjaController::class, 'store']);
-    
+    Route::put('alumni/tracerkerja/{id}/update', [TracerKerjaController::class, 'update']);
+
     Route::get('alumni/tracerkuliah', [TracerKuliahController::class, 'alumnitracerkuliah']);
     Route::post('alumni/tracerkuliah/store', [TracerKuliahController::class, 'store']);
+    Route::put('alumni/tracerkuliah/{id}/update', [TracerKuliahController::class, 'update']);
 
 });

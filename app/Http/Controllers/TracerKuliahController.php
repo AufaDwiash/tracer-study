@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TracerKuliah;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class TracerKuliahController extends Controller
 {
@@ -23,7 +24,10 @@ class TracerKuliahController extends Controller
 
     public function alumnitracerkuliah()
     {
-        return view('alumni.TracerKuliah');
+        $cekalumni = TracerKuliah::where('id_alumni', Auth::user()->id)->exists();
+        $tracerkuliah = TracerKuliah::where('id_alumni', Auth::user()->id)->first();
+
+        return view('alumni.TracerKuliah', compact('tracerkuliah', 'cekalumni'));
     }
     /**
      * Store a newly created resource in storage.
@@ -39,7 +43,7 @@ class TracerKuliahController extends Controller
 
         // Create a new TracerKuliah instance
         $tracerKuliah = new TracerKuliah();
-        $tracerKuliah->id_alumni = $request->id_alumni;
+        $tracerKuliah->id_alumni = $user = Auth::user()->id;
         $tracerKuliah->tracer_kuliah_kampus = $request->tracer_kuliah_kampus;
         $tracerKuliah->tracer_kuliah_status = $request->tracer_kuliah_status;
         $tracerKuliah->tracer_kuliah_jenjang = $request->tracer_kuliah_jenjang;
@@ -60,10 +64,10 @@ class TracerKuliahController extends Controller
        
 
         // Find the existing TracerKuliah record
-        $tracerKuliah = TracerKuliah::findOrFail($id);
+        $tracerKuliah = TracerKuliah::where('id_alumni' , $id)->first();
 
         // Update the fields
-        $tracerKuliah->id_alumni = $request->id_alumni;
+        $tracerKuliah->id_alumni = $user = Auth::user()->id;
         $tracerKuliah->tracer_kuliah_kampus = $request->tracer_kuliah_kampus;
         $tracerKuliah->tracer_kuliah_status = $request->tracer_kuliah_status;
         $tracerKuliah->tracer_kuliah_jenjang = $request->tracer_kuliah_jenjang;

@@ -6,6 +6,7 @@ use App\Models\TracerKerja;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\StatusAlumni;
+use Illuminate\Support\Facades\Auth;
 
 
 class TracerKerjaController extends Controller
@@ -26,7 +27,11 @@ class TracerKerjaController extends Controller
 
     public function alumnitracerkerja()
     {
-        return view('alumni.TracerKerja');
+        
+        $cekalumni = TracerKerja::where('id_alumni', Auth::user()->id)->exists();
+        $tracerkerja = TracerKerja::where('id_alumni', Auth::user()->id)->first();
+
+        return view('alumni.TracerKerja', compact('tracerkerja', 'cekalumni'));
     }
     /**
      * Store a newly created resource in storage.
@@ -35,7 +40,7 @@ class TracerKerjaController extends Controller
     {
         // Create a new TracerKerja instance
         $tracerKerja = new TracerKerja();
-        $tracerKerja->id_alumni = $request->id_alumni;
+        $tracerKerja->id_alumni = Auth::user()->id;
         $tracerKerja->tracer_kerja_pekerjaan = $request->tracer_kerja_pekerjaan;
         $tracerKerja->tracer_kerja_nama = $request->tracer_kerja_nama;
         $tracerKerja->tracer_kerja_jabatan = $request->tracer_kerja_jabatan;
@@ -57,10 +62,10 @@ class TracerKerjaController extends Controller
     {
 
         // Find the existing TracerKerja record
-        $tracerKerja = TracerKerja::findOrFail($id);
+        $tracerKerja = TracerKerja::where('id_alumni' , $id)->first();
 
         // Update the fields
-        $tracerKerja->id_alumni = $request->id_alumni;
+        $tracerKerja->id_alumni = $id;
         $tracerKerja->tracer_kerja_pekerjaan = $request->tracer_kerja_pekerjaan;
         $tracerKerja->tracer_kerja_nama = $request->tracer_kerja_nama;
         $tracerKerja->tracer_kerja_jabatan = $request->tracer_kerja_jabatan;

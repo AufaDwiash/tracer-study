@@ -110,7 +110,9 @@ class AlumniController extends Controller
         $alumni->id_status_alumni = $request->id_status_alumni;
         $alumni->update();
 
+        // if($alumni->id_status)
         return redirect('/' . auth()->user()->role . '/alumni')->with('sukses', 'Berhasil mengedit data');
+        
     }
 
     /**
