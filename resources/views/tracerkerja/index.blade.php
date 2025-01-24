@@ -6,9 +6,7 @@ Tracer Kerja
 
 @section('content')
 
-<div class="col-md-2 mb-2">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formtambah">Tambah Data</button>
-</div>
+
 <div class="card">
     <div class="table-responsive text-nowrap m-2">
         <table class="table" id="data-table">
@@ -34,8 +32,8 @@ Tracer Kerja
                 <td>{{ $item->tracer_kerja_status }}</td>
                 <td>
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#view{{$item->id}}">Lihat Detail</button>
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{ $item->id }}">Edit</button>
-                    <a href="/{{ auth()->user()->role }}/tracerkerja/{{ $item->id }}/delete" class="btn btn-danger">Hapus</a>
+                    <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{ $item->id }}">Edit</button>
+                    <a href="/{{ auth()->user()->role }}/tracerkerja/{{ $item->id }}/delete" class="btn btn-danger">Hapus</a> -->
                 </td>
             </tr>
             @endforeach
@@ -43,7 +41,5 @@ Tracer Kerja
         </table>
     </div>
 </div>
-@include('tracerkerja.form') <!-- Form tambah -->
-@include('tracerkerja.edit') <!-- Form edit -->
 @include('tracerkerja.view')
 @endsection

@@ -18,8 +18,6 @@
 
 @section('content')
 <div class="row gy-0">
-
-
     <div class="card">
         <div class="card-body">
             <form action="/{{ auth()->user()->role }}/alumni/{{$alumni->id}}/update" method="post">

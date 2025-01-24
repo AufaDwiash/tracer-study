@@ -26,32 +26,33 @@ Dashboard
 </div>
 
 <div class="row gy-2"> <!-- Adjusted gy-2 to reduce vertical spacing -->
-<div class="col-md-14"> <!-- Gunakan ukuran kolom lebih kecil -->
-  <div class="card">
-    <div class="card-header d-flex justify-content-between">
-      <h4>Persentase Status Alumni</h4>
-    </div>
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-center mb-1" style="position: relative;">
-        <div class="d-flex flex-column align-items-center gap-1">
-          <h3>
-            <small>Total Alumni</small>
-          </h3>
-          <h3 class="mb-12">{{$total_alumni->count()}}</h3>
-        </div>
-        <div id="chartAlumni" style="min-height: 300px;"></div>
-        <div class="resize-triggers">
-          <div class="expand-trigger">
-            <div style="width: 321px; height: 119px;"></div>
+  <div class="col-md-14"> <!-- Gunakan ukuran kolom lebih kecil -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <h4>Persentase Status Alumni</h4>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-1" style="position: relative;">
+          <div class="d-flex flex-column align-items-center gap-1">
+            <h3>
+              <small>Total Alumni</small>
+            </h3>
+            <h3 class="mb-12">{{$total_alumni->count()}}</h3>
           </div>
-          <div class="contract-trigger"></div>
+          <div id="chartAlumni" style="min-height: 300px;"></div>
+          <div class="resize-triggers">
+            <div class="expand-trigger">
+              <div style="width: 321px; height: 119px;"></div>
+            </div>
+            <div class="contract-trigger"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-</div>
+
 
 @endsection
 

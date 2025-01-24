@@ -32,8 +32,6 @@ Tracer Kuliah
                 <td>{{$item->tracer_kuliah_jenjang}}</td>
                 <td>
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#view{{$item->id}}">Lihat Detail</button>
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{$item->id}}">Edit</button>
-                    <a href="/{{ auth()->user()->role }}/tracerkuliah/{{$item->id}}/delete" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
             @endforeach
@@ -42,7 +40,6 @@ Tracer Kuliah
     </div>
 </div>
 
-@include('tracerkuliah.form')
-@include('tracerkuliah.edit')
+
 @include('tracerkuliah.view')
 @endsection
