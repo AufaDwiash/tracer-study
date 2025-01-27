@@ -34,9 +34,10 @@
 
         /* Hero Section */
         .hero-section {
-            padding: 100px 20px;
+            padding: 100px 20px 199px 20px;
             background: linear-gradient(120deg, #eef9fc, #ffffff);
             text-align: center;
+            height: 0px;
         }
 
         .hero-section h1 {
@@ -85,8 +86,8 @@
             color: #fff;
             text-align: center;
             padding: 15px 0;
-            margin-top: 40px;
-            font-size: 0.9rem;
+            margin-top: 85px;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -96,23 +97,65 @@
     <!-- Header -->
     <header class="d-flex justify-content-between align-items-center px-4">
         <div class="logo">Tracer Study</div>
-        <div>
+        <!-- <div>
             <a href="/login" class="btn btn-light me-2">Login</a>
             <a href="/register" class="btn btn-outline-light">Register</a>
-        </div>
+        </div> -->
     </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <h1>Selamat Datang di <br> <span style="color: #017c87;">Tracer Study SMK Antartika 1</span></h1>
-            <p>Tracer Study membantu melacak jejak lulusan kami dan meningkatkan kualitas pendidikan dengan survei data alumni yang terkini dan relevan.</p>
-            <a href="#features" class="btn btn-primary">Jelajahi Fitur</a>
+            <p>Bangun Masa Depan Bersama melalui Tracer Study</p>
+            <!-- <a href="#features" class="btn btn-primary">Jelajahi Fitur</a> -->
+            <a href="/login" class="btn btn-primary">Login</a>
         </div>
     </section>
 
+
     <!-- Features Section -->
+
     <section class="features-section" id="features">
+        <div class="row gy-1">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Feature 1 -->
+                    <div class="col-md-4">
+                        <div class="feature-box text-center">
+                            <h5 class="feature-title">Lebih dari 70% Berkarier Sesuai Bidang</h5>
+                            <p class="feature-description">
+                                Sebagian besar alumni bekerja di bidang yang sesuai dengan jurusan mereka di kampus, membuktikan efektivitas pendidikan tinggi. 🎓
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="col-md-4">
+                        <div class="feature-box text-center">
+                            <h5 class="feature-title">Koneksi Alumni Terungkap</h5>
+                            <p class="feature-description">
+                                Alumni yang sukses di bidang tertentu saling terhubung atau bahkan bekerja di perusahaan yang sama! 🌐
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="col-md-4">
+                        <div class="feature-box text-center">
+                            <h5 class="feature-title">Berperan dalam Prediksi Tren Karier</h5>
+                            <p class="feature-description">
+                                Memprediksi tren karier masa depan dengan menganalisis bidang pekerjaan alumni. 🔮
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+    <!-- <section class="features-section" id="features">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
@@ -138,11 +181,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 SMK Antartika 1. All Rights Reserved.</p>
+        <p>&copy; 2025 SMK Antartika 1</p>
     </footer>
 
     <!-- Bootstrap JS -->
