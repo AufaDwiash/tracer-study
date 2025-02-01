@@ -6,7 +6,7 @@ Dashboard
 @section('content')
 <div class="row gy-0,5"> <!-- Adjusted gy-2 to reduce vertical spacing -->
   <!-- Card 1 -->
-  <div class="col-xxl-8 order-0"> <!-- Removed margin class -->
+  <div class="col-xxl-15 order-0"> <!-- Removed margin class -->
     <div class="card">
       <div class="d-flex align-items-start row">
         <div class="col-sm-7">

@@ -12,7 +12,7 @@
                        
                         <div class="col mb-0">
                             <label for="dobLarge" class="form-label">Status Alumni</label>
-                            <input type="text" id="dobLarge" class="form-control" placeholder="Opsional"
+                            <input type="text" id="dobLarge" class="form-control" placeholder="isi status alumni"
                                 name="status_alumni">
                         </div>
                     </div>

@@ -6,9 +6,9 @@ Tracer Kuliah
 
 @section('content')
 
-<div class="col-md-2 mb-2">
+<!-- <div class="col-md-2 mb-2">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formtambah">Tambah Data</button>
-</div>
+</div> -->
 <div class="card">
     <div class="table-responsive text-nowrap m-2">
         <table class="table" id="data-table">

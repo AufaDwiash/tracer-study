@@ -23,19 +23,28 @@ class AuthenticatedSessionController extends Controller
     public function postlogin(Request $request): RedirectResponse
     {
         $email = User::where('email', $request->email)->first();
-        if ($email->status_login ?? '-' != '0') {
-            return back()->with('gagal ', 'Akun sudah login di device lain');
-        }
-
+        
         if (!$email) {
             return back()->with('gagal', 'Email belum terdaftar!');
         } else {
+            if ($email->status_login == '1') {
+                return back()->with('gagal ', 'Akun sudah login di device lain');
+            }
             if (Auth::attempt($request->only('email', 'password'))) {
                 $user = Auth::user();
                 $user->status_login = '1';
                 $user->update();
 
-                return redirect($user->role . '/dashboard');
+                if ($user->role == 'alumni') {
+                    if($user->jenis_kelamin == null || $user->tempat_lahir == null || $user->tgl_lahir == null || 
+                    $user->alamat == null || $user->no_hp == null || $user->nisn == null || $user->nik == null ||
+                    $user->id_tahun_lulus == null || $user->id_konsentrasi_keahlian == null || $user->id_status_alumni == null){
+                        return redirect('/alumni/dashboard')->with('sukses', 'Lengkapi data Anda sebelum melanjutkan.');
+                    }
+                    return redirect('/alumni/dashboard')->with('sukses ', 'Selamat datang ' . $user->nama_depan);
+                }else{
+                    return redirect('/admin/dashboard')->with('sukses', 'Selamat datang ' . $user->nama_depan);
+                }
             } else {
                 return back()->with('gagal', 'Email atau Password salah!');
             }

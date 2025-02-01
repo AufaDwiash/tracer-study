@@ -105,6 +105,11 @@
                         <input type="email" id="email" class="form-control" placeholder="Masukkan Email" name="email"
                             value="{{ $alumni->email ?? '' }}">
                     </div>
+                    <div class="col mb-0">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="text" id="password" class="form-control" name="password"
+                            placeholder="Isi Jika Ingin Mengubah Password">
+                    </div>
                 </div>
                 <div class="row g-2">
                     <div class="col mb-0">

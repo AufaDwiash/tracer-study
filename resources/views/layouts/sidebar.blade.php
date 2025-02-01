@@ -34,6 +34,12 @@
                 <div data-i18n="Testimoni">Testimoni</div>
             </a>
         </li>
+        <li class="menu-item {{ Request::is(auth()->user()->role . '/sekolah') ? 'active' : '' }}">
+            <a href="/{{ auth()->user()->role }}/sekolah" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-building-house"></i>
+                <div data-i18n="Sekolah">Profile Sekolah</div>
+            </a>
+        </li>
         @endif
 
         @if(auth()->user()->role == 'admin')

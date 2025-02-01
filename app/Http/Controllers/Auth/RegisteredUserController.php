@@ -59,7 +59,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         // Redirect to the login page with success message
-        return redirect('/login')->with('sukses', 'Registration successful. Please log in.');
+        return redirect('/login')->with('sukses', 'Registrasi berhasil! Silakan login.');
     }
 
     private function cekEmail($email)

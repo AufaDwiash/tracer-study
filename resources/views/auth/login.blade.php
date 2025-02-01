@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
 ==============================================================
@@ -26,7 +25,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+  <title>Tracer Study Login</title>
 
   <meta name="description" content="" />
 
@@ -79,16 +78,21 @@
               </a>
             </div>
             <!-- <h4 class="mb-2">Welcome to Tracer Study🎓️</h4> -->
-            <p class="mb-4">Please sign-in </p>
+            <!-- <p class="mb-4">Please sign-in </p> -->
             <form id="formAuthentication" class="mb-3" action="/postlogin" method="POST">
               @csrf
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus />
               </div>
-              <div class="mb-3">
+              <div class="mb-3 position-relative">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" />
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" />
+                  <span class="input-group-text" style="cursor: pointer;" onclick="togglePasswordVisibility()">
+                    <i id="togglePasswordIcon" class="bx bx-hide"></i> <!-- Ikon mata dari Boxicons -->
+                  </span>
+                </div>
               </div>
               <button class="btn btn-primary d-grid w-100">Sign in</button>
             </form>
@@ -106,8 +110,6 @@
   </div>
 
   <!-- / Content -->
-
-
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
@@ -154,6 +156,24 @@
     });
   </script>
   @endif
+
+  <!-- Script untuk toggle password visibility -->
+  <script>
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password');
+      const toggleIcon = document.getElementById('togglePasswordIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Ubah ke text untuk menampilkan password
+        toggleIcon.classList.remove('bx-hide');
+        toggleIcon.classList.add('bx-show'); // Ganti ikon menjadi mata terbuka
+      } else {
+        passwordInput.type = 'password'; // Ubah ke password untuk menyembunyikan password
+        toggleIcon.classList.remove('bx-show');
+        toggleIcon.classList.add('bx-hide'); // Ganti ikon menjadi mata tertutup
+      }
+    }
+  </script>
 </body>
 
 </html>

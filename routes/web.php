@@ -105,4 +105,6 @@ Route::middleware(['auth', 'AlumniMiddleware'])->group(function () {
     Route::post('alumni/tracerkuliah/store', [TracerKuliahController::class, 'store']);
     Route::put('alumni/tracerkuliah/{id}/update', [TracerKuliahController::class, 'update']);
 
+    Route::get('/alumni/sekolah', [SekolahController::class, 'index']);
+
 });

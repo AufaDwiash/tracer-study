@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Tahun;
 use App\Models\KonsentrasiKeahlian;
 use App\Models\StatusAlumni;
+use Illuminate\Support\Facades\Hash;
+
 
 use Illuminate\Http\Request;
 // use App\Models\Testimoni;
@@ -91,28 +93,42 @@ class AlumniController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $alumni = User::find($id);
-        $alumni->nisn = $request->nisn;
-        $alumni->nik = $request->nik;
-        $alumni->nama_depan = $request->nama_depan;
-        $alumni->nama_belakang = $request->nama_belakang;
-        $alumni->jenis_kelamin = $request->jenis_kelamin;
-        $alumni->tempat_lahir = $request->tempat_lahir;
-        $alumni->tgl_lahir = $request->tgl_lahir;
-        $alumni->alamat = $request->alamat;
-        $alumni->no_hp = $request->no_hp;
-        $alumni->akun_fb = $request->akun_fb;
-        $alumni->akun_ig = $request->akun_ig;
-        $alumni->akun_tiktok = $request->akun_tiktok;
-        $alumni->email = $request->email;
-        $alumni->id_tahun_lulus = $request->id_tahun_lulus;
-        $alumni->id_konsentrasi_keahlian = $request->id_konsentrasi_keahlian;
-        $alumni->id_status_alumni = $request->id_status_alumni;
-        $alumni->update();
+        try{
+            $cek_nisn = User::where('nisn', $request->nisn)->where('id', '!=', auth()->user()->id)->exists();
+            $cek_nik = User::where('nik', $request->nik)->where('id', '!=', auth()->user()->id)->exists();
+            
+            if($cek_nik != false && $cek_nisn != false){
+                return redirect('/' . auth()->user()->role . '/alumni')->with('gagal', 'Data nik atau nisn yang sama sudah digunakan');
+            }
+
+            $alumni = User::find($id);
+            $alumni->nisn = $request->nisn;
+            $alumni->nik = $request->nik;
+            $alumni->nama_depan = $request->nama_depan;
+            $alumni->nama_belakang = $request->nama_belakang;
+            $alumni->jenis_kelamin = $request->jenis_kelamin;
+            $alumni->tempat_lahir = $request->tempat_lahir;
+            $alumni->tgl_lahir = $request->tgl_lahir;
+            $alumni->alamat = $request->alamat;
+            $alumni->no_hp = $request->no_hp;
+            $alumni->akun_fb = $request->akun_fb;
+            $alumni->akun_ig = $request->akun_ig;
+            $alumni->akun_tiktok = $request->akun_tiktok;
+            $alumni->email = $request->email;
+            if($request->password!=null){
+                $alumni->password = Hash::make($request->password);
+            }
+            $alumni->id_tahun_lulus = $request->id_tahun_lulus;
+            $alumni->id_konsentrasi_keahlian = $request->id_konsentrasi_keahlian;
+            $alumni->id_status_alumni = $request->id_status_alumni;
+            $alumni->update();
 
         // if($alumni->id_status='1'){
 
             return redirect('/' . auth()->user()->role . '/alumni')->with('sukses', ' mengedit data,mohon isi data tracer');
+        }catch(\Exception $e){
+            return redirect('/' . auth()->user()->role . '/alumni')->with('gagal', ' gagal edit data: ' . $e->getMessage());
+        }
         
         
     }

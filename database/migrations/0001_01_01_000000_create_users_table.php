@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('id_tahun_lulus')->nullable();
             $table->foreignId('id_konsentrasi_keahlian')->nullable();
             $table->foreignId('id_status_alumni')->nullable();
-            $table->string('nisn', 20)->nullable();
-            $table->string('nik', 20)->nullable();
+            $table->string('nisn', 20)->unique()->nullable();
+            $table->string('nik', 20)->unique()->nullable();
             $table->string('nama_depan', 50);
             $table->string('nama_belakang', 50);
             $table->string('jenis_kelamin', 10)->nullable();

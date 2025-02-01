@@ -12,7 +12,7 @@ class SekolahController extends Controller
      */
     public function index()
     {
-        $sekolah = Sekolah::all(); // Fetch all school records
+        $sekolah = Sekolah::where('id' , '1')->first(); // Fetch all school records
         return view('sekolah.index', compact('sekolah')); // Return to the index view with data
     }
 
