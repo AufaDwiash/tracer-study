@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nss', 20);
             $table->string('nama_sekolah', 50);
             $table->string('alamat', 50);
-            $table->string('no_telp', 15);
+            $table->strinzg('no_telp', 15);
             $table->string('website', 50)->nullable();
             $table->string('email', 50)->nullable();
             $table->timestamps();
