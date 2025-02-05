@@ -64,13 +64,20 @@ class User extends Authenticatable
         ];
     }
 
-    public function tahun(){
+    public function tahun()
+    {
         return $this->belongsTo(Tahun::class, 'id_tahun_lulus');
     }
-    public function konsentrasi(){
+    public function konsentrasi()
+    {
         return $this->belongsTo(KonsentrasiKeahlian::class, 'id_konsentrasi_keahlian');
     }
-    public function status(){
-        return $this->belongsTo(StatusAlumni::class, 'id_status_alumni'); 
+    public function status()
+    {
+        return $this->belongsTo(StatusAlumni::class, 'id_status_alumni');
+    }
+    public function testimoni()
+    {
+        return $this->hasMany(Testimoni::class, 'id_alumni', 'id_alumni');
     }
 }

@@ -24,7 +24,7 @@ Testimoni Alumni
                 @foreach($testimonis as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->alumni->nama_depan ?? '-'}} {{$item->alumni->nama_belakang ?? '-'}}</td>
+                        <td>{{ $item->user->nama_depan ?? '' }} {{ $testimoni->user->nama_belakang ?? '' }}</td>
                         <td>{{$item->tgl_testimoni}}</td>
                         <td>
                             <a href="/{{auth()->user()->role}}/testimoni/{{$item->id}}/delete"

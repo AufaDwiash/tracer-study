@@ -108,7 +108,8 @@
         }
 
         .features-section .feature-box img {
-            width: 60px; /* Sesuaikan ukuran logo */
+            width: 60px;
+            /* Sesuaikan ukuran logo */
             height: auto;
             margin-bottom: 15px;
         }
@@ -120,6 +121,51 @@
         }
 
         .features-section .feature-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* testi Section */
+        .testi {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .testi .feature-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(192, 213, 255, 0.7);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .testi .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testi .feature-box i {
+            font-size: 2.5rem;
+            color: #017c87;
+            margin-bottom: 15px;
+        }
+
+        .testi .feature-box img {
+            width: 60px;
+            /* Sesuaikan ukuran logo */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .testi .feature-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .testi .feature-box p {
             font-size: 1rem;
             color: #555;
         }
@@ -139,6 +185,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -150,6 +197,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -185,7 +233,7 @@
                 <!-- Feature 1 -->
                 <div class="col-md-4">
                     <div class="feature-box">
-                        
+
                         <h3>Lebih dari 70% Berkarier Sesuai Bidang</h3>
                         <p>Sebagian besar alumni bekerja di bidang yang sesuai dengan jurusan mereka di kampus, membuktikan efektivitas pendidikan tinggi.</p>
                     </div>
@@ -193,7 +241,7 @@
                 <!-- Feature 2 -->
                 <div class="col-md-4">
                     <div class="feature-box">
-                        
+
                         <h3>Koneksi Alumni Terungkap</h3>
                         <p>Alumni yang sukses di bidang tertentu saling terhubung atau bahkan bekerja di perusahaan yang sama!</p>
                     </div>
@@ -201,18 +249,38 @@
                 <!-- Feature 3 -->
                 <div class="col-md-4">
                     <div class="feature-box">
-                        
+
                         <h3>Berperan dalam Prediksi Tren Karier</h3>
                         <p>Memprediksi tren karier masa depan dengan menganalisis bidang pekerjaan alumni.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <section class="testi" id="features">
+            <div class="container">
+                <div class="row">
+                    @foreach($testimonis as $testimoni)
+                    <div class="col-md-4 mb-4"> <!-- Tambahkan mb-4 untuk margin bottom -->
+                        <div class="feature-box">
+                            <h3>Testimoni</h3>
+                            <div class="testimonial">
+                                <p><strong>- {{ $testimoni->user->nama_depan ?? '-' }} {{ $testimoni->user->nama_belakang ?? '-' }}</strong></p>
+                                <blockquote>"{{ $testimoni->testimoni }}"</blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
     </section>
+    <!-- <section class="features-section" id="features">
+    </section> -->
 
     <!-- Footer -->
     <footer>
         <p>&copy; {{$sekolah->nama_sekolah}}</p>
+        bla
     </footer>
 
     <!-- Bootstrap JS -->
