@@ -12,7 +12,7 @@
                         <div class="col mb-0">
                             <label for="kodeBidangKeahlian" class="form-label">Kode Bidang Keahlian</label>
                             <input type="text" id="kodeBidangKeahlian" class="form-control" placeholder="Masukkan Kode"
-                                name="kode_bidang_keahlian" value='{{$kode}}' disabled>
+                                name="kode_bidang_keahlian" value='{{$kode}}' readonly>
                         </div>
                         <div class="col mb-0">
                             <label for="bidangKeahlian" class="form-label">Bidang Keahlian</label>

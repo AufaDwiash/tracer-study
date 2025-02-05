@@ -35,11 +35,12 @@
                                 <li class="list-group-item"><strong>Nama Kampus:</strong> {{ $item->tracer_kuliah_kampus ?? '-' }}</li>
                                 <li class="list-group-item"><strong>Status:</strong> {{ $item->tracer_kuliah_status ?? '-' }}</li>
                                 <li class="list-group-item"><strong>Jenjang Kuliah:</strong> {{ $item->tracer_kuliah_jenjang ?? '-' }}</li>
-                                <li class="list-group-item"><strong>Jurusan:</strong> {{ $item->tracer_kuliah_jurusan ?? '-' }}</li>
+                             
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Jurusan:</strong> {{ $item->tracer_kuliah_jurusan ?? '-' }}</li>
                                 <li class="list-group-item"><strong>Keselarasan Jurusan:</strong> {{ $item->tracer_kuliah_linier ?? '-' }}</li>
                                 <li class="list-group-item"><strong>Alamat Kampus:</strong> {{ $item->tracer_kuliah_alamat ?? '-' }}</li>
                             </ul>

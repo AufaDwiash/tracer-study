@@ -27,6 +27,9 @@ Data Sekolah
         font-weight: 600;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .card-title{
+        color:white;
+    }
 
     .card-body {
         padding: 17px 20px 20px 20px; /* Padding-top ditambah untuk memberi jarak */

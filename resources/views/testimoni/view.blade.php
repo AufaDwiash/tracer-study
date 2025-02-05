@@ -11,7 +11,7 @@
                     <!-- Tanggal Testimoni -->
                     <div class="col mb-0">
                         <label class="form-label">Testimoni - {{$item->alumni->nama_depan ?? '-'}} {{$item->alumni->nama_belakang ?? '-'}}</label>
-                        <textarea class="form-control" name="" id="">{{$item->testimoni}}</textarea>
+                        <textarea class="form-control" name="" id="" readonly>{{$item->testimoni}} </textarea>
                     </div>
                 </div>
             </div>

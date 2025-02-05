@@ -28,7 +28,7 @@ Tahun Lulus
                 <td>{{$item->keterangan}}</td>
                 <td> 
                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{$item->id}}">Edit</button>
-                    <a href="/{{auth()->user()->role}}/{{$item->id}}/tahun-lulus/{{$item->id}}/delete" class="btn btn-danger">Hapus</a>
+                    <a href="/{{auth()->user()->role}}/tahun-lulus/{{$item->id}}/delete" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
             @endforeach

@@ -59,7 +59,7 @@
                         </div>
                         <div class="col mb-0">
                             <label for="gaji" class="form-label">Gaji</label>
-                            <input type="text" id="gaji" class="form-control" name="tracer_kerja_gaji" placeholder="Masukkan Gaji" required>
+                            <input type="text" id="gaji" class="form-control" name="tracer_kerja_gaji" placeholder="Masukkan Gaji IDR atau Dolar" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-2">Tambah</button>

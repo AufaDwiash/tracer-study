@@ -24,6 +24,8 @@
                                 <li class="list-group-item"><strong>NIK:</strong> {{ $item->nik }}</li>
                                 <li class="list-group-item"><strong>Nama Lengkap:</strong> {{ $item->nama_depan }} {{ $item->nama_belakang }}</li>
                                 <li class="list-group-item"><strong>Jenis Kelamin:</strong> {{ $item->jenis_kelamin }}</li>
+                                <li class="list-group-item"><strong>Email:</strong> {{ $item->email }}</li>
+                                
                             </ul>
                         </div>
                         <div class="col-md-6">
@@ -32,6 +34,7 @@
                                 <li class="list-group-item"><strong>Tanggal Lahir:</strong> {{ $item->tgl_lahir }}</li>
                                 <li class="list-group-item"><strong>Alamat:</strong> {{ $item->alamat }}</li>
                                 <li class="list-group-item"><strong>No. HP:</strong> {{ $item->no_hp }}</li>
+                                <li class="list-group-item"><strong>Password:</strong> ********</li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +67,7 @@
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Status Alumni:</strong> {{ $item->status->status ?? '-' }}</li>
-                                <li class="list-group-item"><strong>Email:</strong> {{ $item->email }}</li>
+                            
                             </ul>
                         </div>
                     </div>

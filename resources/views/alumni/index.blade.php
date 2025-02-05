@@ -5,9 +5,9 @@ Alumni
 @endsection
 
 @section('content')
-<div class="col-md-2 mb-2">
+<!-- <div class="col-md-2 mb-2">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formtambah">Tambah Data</button>
-</div>
+</div> -->
 <div class="card">
     <div class="table-responsive text-nowrap">
         <table class="table">
@@ -31,7 +31,7 @@ Alumni
                     <td>{{$item->no_hp}}</td>
                     <td>
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#view{{$item->id}}">Lihat Detail</button>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{$item->id}}">Edit</button>
+                        <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit{{$item->id}}">Edit</button> -->
                         <a href="/{{auth()->user()->role}}/alumni/{{$item->id}}/delete" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
