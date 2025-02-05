@@ -10,7 +10,7 @@
                 <div class="row g-2 mt-2">
                     <!-- Tanggal Testimoni -->
                     <div class="col mb-0">
-                        <label class="form-label">Testimoni - {{$item->alumni->nama_depan ?? '-'}} {{$item->alumni->nama_belakang ?? '-'}}</label>
+                        <label class="form-label">Testimoni - {{$item->user->nama_depan ?? ''}} {{$item->user->nama_belakang ?? ''}}</label>
                         <textarea class="form-control" name="" id="" readonly>{{$item->testimoni}} </textarea>
                     </div>
                 </div>

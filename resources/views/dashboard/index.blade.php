@@ -11,7 +11,7 @@ Dashboard
       <div class="d-flex align-items-start row">
         <div class="col-sm-7">
           <div class="card-body">
-            <h5 class="card-title text-primary mb-3">Sugeng Rawuh {{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}} 🎉</h5>
+            <h5 class="card-title text-primary mb-3">Selamat Datang {{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}} 🎉</h5>
             <p class="mb-6">Kamu Login Sebagai - {{auth()->user()->role}}</p>
           </div>
         </div>
